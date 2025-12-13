@@ -1,0 +1,16 @@
+{
+  "name": "pomodoro-timer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "A customizable cross-platform Pomodoro timer that stays on your screen",
+  "devDependencies": {
+    "electron": "^39.2.7"
+  }
+}

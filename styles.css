@@ -1,0 +1,254 @@
+:root {
+  --bg-color: #2e3440;
+  --text-color: #d8dee9;
+  --accent-color: #88c0d0;
+  --secondary-color: #4c566a;
+  --success-color: #a3be8c;
+  --warning-color: #ebcb8b;
+  --danger-color: #bf616a;
+  --border-radius: 10px;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: transparent;
+  color: var(--text-color);
+  user-select: none;
+  overflow: hidden;
+}
+
+#app {
+  width: 380px;
+  background: var(--bg-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+#titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background: var(--secondary-color);
+  cursor: move;
+  -webkit-app-region: drag;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.window-controls {
+  display: flex;
+  gap: 8px;
+  -webkit-app-region: no-drag;
+}
+
+.window-controls button {
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.window-controls button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#close-btn:hover {
+  background: var(--danger-color);
+}
+
+#timer-container {
+  padding: 20px;
+  text-align: center;
+}
+
+#timer-display {
+  font-size: 64px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: var(--accent-color);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#timer-status {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+#timer-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.control-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: var(--secondary-color);
+  color: var(--text-color);
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.control-btn:hover:not(:disabled) {
+  background: var(--accent-color);
+  color: var(--bg-color);
+  transform: translateY(-2px);
+}
+
+.control-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#start-btn {
+  background: var(--success-color);
+  color: #2e3440;
+}
+
+#pause-btn {
+  background: var(--warning-color);
+  color: #2e3440;
+}
+
+#reset-btn {
+  background: var(--danger-color);
+  color: #2e3440;
+}
+
+#session-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+#customization {
+  padding: 15px;
+  border-top: 1px solid var(--secondary-color);
+}
+
+.section-header {
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.setting-group {
+  margin-bottom: 15px;
+}
+
+.setting-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.setting-group input[type="number"],
+.setting-group select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--secondary-color);
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--text-color);
+}
+
+.setting-group input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.apply-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--accent-color);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s;
+}
+
+.apply-btn:hover {
+  background: #5e81ac;
+}
+
+#drag-handle {
+  padding: 10px;
+  text-align: center;
+  background: var(--secondary-color);
+  font-size: 12px;
+  cursor: move;
+  -webkit-app-region: drag;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+#drag-handle:hover {
+  opacity: 1;
+}
+
+/* Theme variations */
+.theme-dark {
+  --bg-color: #2e3440;
+  --text-color: #d8dee9;
+  --accent-color: #88c0d0;
+  --secondary-color: #4c566a;
+}
+
+.theme-light {
+  --bg-color: #eceff4;
+  --text-color: #2e3440;
+  --accent-color: #5e81ac;
+  --secondary-color: #d8dee9;
+}
+
+.theme-green {
+  --bg-color: #2e3440;
+  --text-color: #d8dee9;
+  --accent-color: #a3be8c;
+  --secondary-color: #4c566a;
+}
+
+.theme-blue {
+  --bg-color: #2e3440;
+  --text-color: #d8dee9;
+  --accent-color: #81a1c1;
+  --secondary-color: #4c566a;
+}
