@@ -135,6 +135,7 @@ class PomodoroTimer {
             this.startBtn.disabled = false;
             this.pauseBtn.disabled = true;
             clearInterval(this.timerInterval);
+            this.timerInterval = null;
         }
     }
 
@@ -146,6 +147,7 @@ class PomodoroTimer {
 
     timerComplete() {
         clearInterval(this.timerInterval);
+        this.timerInterval = null;
         this.isRunning = false;
 
         // Show notification
@@ -281,6 +283,10 @@ class PomodoroTimer {
         document.addEventListener('mousemove', mouseMoveHandler);
         document.addEventListener('mouseup', mouseUpHandler);
     }
+}
+// Export for unit testing
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { PomodoroTimer };
 }
 
 // Initialize timer when DOM is loaded
