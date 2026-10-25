@@ -11,7 +11,7 @@
   "license": "ISC",
   "description": "A customizable cross-platform Pomodoro timer that stays on your screen",
   "devDependencies": {
-    "electron": "^39.2.7",
+    "electron": "^42.11.16",
     "jest": "^30.2.0",
     "jest-environment-jsdom": "^30.2.0"
   }
